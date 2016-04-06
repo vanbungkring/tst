@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "BaseViewController.h"
+#import <AFNetworkActivityLogger/AFNetworkActivityLogger.h>
 @interface AppDelegate ()
 
 @end
@@ -17,6 +18,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [[AFNetworkActivityLogger sharedLogger] startLogging];
+    [AFNetworkActivityLogger sharedLogger].level = AFLoggerLevelDebug;
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    BaseViewController *base = [[BaseViewController alloc] initWithNibName:@"BaseViewController" bundle:nil];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:base];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 
