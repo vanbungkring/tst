@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 @class FZResponse;
 @interface MessageTableViewCell : UITableViewCell
-- (void)configureCell:(FZResponse *)response;
+@property (weak, nonatomic) IBOutlet UITextView *chatTextView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *chatTextViewHeightConstraints;
+@property (weak, nonatomic) IBOutlet UIImageView *avatar;
+- (void)configureCell:(FZResponse *)response withViewTag:(NSInteger)tag;
 @end

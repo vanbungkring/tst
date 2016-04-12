@@ -31,7 +31,13 @@ NSString *const kFZResponseTime = @"time";
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict {
     return [[self alloc] initWithDictionary:dict];
 }
-
+/**
+ *  <#Description#>
+ *
+ *  @param dict dictionary object
+ *
+ *  @return return it as object class
+ */
 - (instancetype)initWithDictionary:(NSDictionary *)dict {
     self = [super init];
     if(self && [dict isKindOfClass:[NSDictionary class]]) {
@@ -46,6 +52,11 @@ NSString *const kFZResponseTime = @"time";
     
 }
 
+/**
+ *  dictionary representation
+ *
+ *  @return object class to dictionary again
+ */
 - (NSDictionary *)dictionaryRepresentation {
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
     [mutableDict setValue:self.message forKey:kFZResponseMessage];
@@ -56,6 +67,11 @@ NSString *const kFZResponseTime = @"time";
     return [NSDictionary dictionaryWithDictionary:mutableDict];
 }
 
+/**
+ *  to make all dictionary to string
+ *
+ *  @return string
+ */
 - (NSString *)description  {
     return [NSString stringWithFormat:@"%@", [self dictionaryRepresentation]];
 }
@@ -75,6 +91,14 @@ NSString *const kFZResponseTime = @"time";
     return self;
 }
 
+/**
+ *  method to fetch all message in background
+ *
+ *  @param params     parameters(if get== query string)
+ *  @param completion send all data result to mainthread
+ *
+ *  @return return array as response but already in object class
+ */
 + (NSURLSessionDataTask *)fetchMessage:(NSDictionary *)params completionBlock:(void(^)(NSArray *response ,NSError *error))completion {
     return [[APIManager sharedClient] GET:@"messages.json" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         NSMutableArray *array = [NSMutableArray new];

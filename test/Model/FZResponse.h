@@ -7,8 +7,9 @@
 
 #import <Foundation/Foundation.h>
 
-
-
+/**
+ *  FZ response class, call it as models
+ */
 @interface FZResponse : NSObject <NSCoding, NSCopying>
 
 @property (nonatomic, strong) NSString *message;

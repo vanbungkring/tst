@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+/**
+ *  separate the tableview datasource to make it maintainable
+ */
 @interface DataSource : NSObject <UITableViewDataSource>
 @property (nonatomic,strong) NSArray *message;
-+ (NSURLSessionDataTask *)fetchMessage:(NSDictionary *)params completionBlock:(void(^)(NSArray *response ,NSError *error))completion;
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00731F0D1CB60AB80028E4BD /* MeMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00731F0B1CB60AB80028E4BD /* MeMessageTableViewCell.m */; };
+		00731F0E1CB60AB80028E4BD /* MeMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00731F0C1CB60AB80028E4BD /* MeMessageTableViewCell.xib */; };
 		0075DBEF1CB5920300842D1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0075DBEE1CB5920300842D1D /* main.m */; };
 		0075DBF21CB5920300842D1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0075DBF11CB5920300842D1D /* AppDelegate.m */; };
 		0075DBFA1CB5920300842D1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0075DBF91CB5920300842D1D /* Assets.xcassets */; };
@@ -22,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00731F0A1CB60AB80028E4BD /* MeMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeMessageTableViewCell.h; sourceTree = "<group>"; };
+		00731F0B1CB60AB80028E4BD /* MeMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeMessageTableViewCell.m; sourceTree = "<group>"; };
+		00731F0C1CB60AB80028E4BD /* MeMessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeMessageTableViewCell.xib; sourceTree = "<group>"; };
 		0075DBEA1CB5920300842D1D /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0075DBEE1CB5920300842D1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0075DBF01CB5920300842D1D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -129,6 +134,9 @@
 				0075DC151CB59CF100842D1D /* MessageTableViewCell.h */,
 				0075DC161CB59CF100842D1D /* MessageTableViewCell.m */,
 				0075DC171CB59CF100842D1D /* MessageTableViewCell.xib */,
+				00731F0A1CB60AB80028E4BD /* MeMessageTableViewCell.h */,
+				00731F0B1CB60AB80028E4BD /* MeMessageTableViewCell.m */,
+				00731F0C1CB60AB80028E4BD /* MeMessageTableViewCell.xib */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -232,6 +240,7 @@
 				0075DC191CB59CF100842D1D /* MessageTableViewCell.xib in Resources */,
 				0075DBFD1CB5920300842D1D /* LaunchScreen.storyboard in Resources */,
 				0075DBFA1CB5920300842D1D /* Assets.xcassets in Resources */,
+				00731F0E1CB60AB80028E4BD /* MeMessageTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +304,7 @@
 				0075DC1D1CB59F1400842D1D /* DataSource.m in Sources */,
 				0075DC181CB59CF100842D1D /* MessageTableViewCell.m in Sources */,
 				0075DC211CB5A21E00842D1D /* APIManager.m in Sources */,
+				00731F0D1CB60AB80028E4BD /* MeMessageTableViewCell.m in Sources */,
 				0075DC0E1CB597CD00842D1D /* FZResponse.m in Sources */,
 				0075DBEF1CB5920300842D1D /* main.m in Sources */,
 			);

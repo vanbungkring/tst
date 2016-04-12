@@ -8,27 +8,45 @@
 
 #import "DataSource.h"
 #import "MessageTableViewCell.h"
+#import "MeMessageTableViewCell.h"
 #import "FZDataModels.h"
 @implementation DataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.message.count;
 }
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FZResponse *response = [self.message objectAtIndex:indexPath.row];
-    static NSString *CellIdentifier = @"MessageTableViewCell";
-    MessageTableViewCell *cell = (MessageTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (!cell) {
-        UINib *cellNib = [UINib nibWithNibName:[MessageTableViewCell debugDescription] bundle:nil];
-        [tableView registerNib:cellNib forCellReuseIdentifier:[MessageTableViewCell debugDescription]];
-        cell = [[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil][0];
+    if (!response.isFromMe) {
+        static NSString *CellIdentifier = @"MessageTableViewCell";
+        MessageTableViewCell *cell = (MessageTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        
+        if (!cell) {
+            UINib *cellNib = [UINib nibWithNibName:[MessageTableViewCell debugDescription] bundle:nil];
+            [tableView registerNib:cellNib forCellReuseIdentifier:[MessageTableViewCell debugDescription]];
+            cell = [[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil][0];
+        }
+        
+        [cell configureCell:response withViewTag:indexPath.row];
+        return cell;
     }
-    
-    [cell configureCell:response];
-    return cell;
+    else {
+        static NSString *CellIdentifier = @"MeMessageTableViewCell";
+        MeMessageTableViewCell *cell = (MeMessageTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        
+        if (!cell) {
+            UINib *cellNib = [UINib nibWithNibName:[MessageTableViewCell debugDescription] bundle:nil];
+            [tableView registerNib:cellNib forCellReuseIdentifier:[MessageTableViewCell debugDescription]];
+            cell = [[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil][0];
+        }
+        [cell configureCell:response];
+        return cell;
+        
+    }
 }
 @end
